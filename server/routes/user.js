@@ -32,7 +32,7 @@ router.post('/edit', function (req, res, next) {
         },
         exitEmail :function (done) {
             dbHelper.User.findOne({email:user.email}, function (err,doc) {
-                done(null,doc.email);
+                done(null,doc && doc.email);
             });
         }
     }, function (err, result) {
