@@ -11,7 +11,7 @@ var Config = {
         cookieSecret: 'meiluocanxueblogsecret',
         name:'loveyedie',
         host:'www.loveyedie.xin',
-        url:'mongodb://dds-bp1ddbe00dfdb9041.mongodb.rds.aliyuncs.com:3717/loveydie'
+        url:'mongodb://loveyedie:meiluocanxue@dds-bp1ddbe00dfdb9041.mongodb.rds.aliyuncs.com:3717/loveydie'
         //url: 'mongodb://127.0.0.1:27017/loveyedie'
     },
     constant:{
