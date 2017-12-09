@@ -46,25 +46,30 @@ router.post('/:from', upload.single('avatar'), function (req, res, next) {
     var picUrl = '/upload';
     if(uploadObj[uploadFrom]) picUrl = picUrl + '/' + uploadObj[uploadFrom].storage;
 
-    dbHelper.Picture.create({
-        picurl: picUrl + '/' + req.file.filename,
-        _user: req.session.user._id || '',
-        picname: req.file.filename || '',
-        picoriginname: req.file.originalname || '',
-        usefor: uploadFrom
-    },function (err, doc) {
-        if(req.file){
-            res.json({
-                status: 1,
-                result: {
-                    picId: doc._id || '',
-                    picUrl: picUrl + '/' + req.file.filename
-                }
-            });
-        }else{
-            res.json({status: 0, message: '大爷，不好意思，上传失败！'});
-        }
-    });
+    if(req.file){
+        dbHelper.Picture.create({
+            picurl: picUrl + '/' + req.file.filename,
+            _user: req.session.user._id || '',
+            picname: req.file.filename || '',
+            picoriginname: req.file.originalname || '',
+            usefor: uploadFrom
+        },function (err, doc) {
+            if(err){
+                next(err);
+            }else{
+                res.json({
+                    status: 1,
+                    result: {
+                        picId: doc._id || '',
+                        picUrl: picUrl + '/' + req.file.filename
+                    }
+                });
+            }
+        });
+    }else{
+        res.json({status: 0, message: '大爷，不好意思，上传失败！'});
+    }
+
 
 });
 
