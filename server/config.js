@@ -11,7 +11,7 @@ var Config = {
         cookieSecret: 'meiluocanxueblogsecret',
         name:'loveyedie',
         host:'www.loveyedie.xin',
-        url:'mongodb://loveyedie:meiluocanxue@ds-bp1ddbe00dfdb9041.mongodb.rds.aliyuncs.com:3717,dds-bp1ddbe00dfdb9042.mongodb.rds.aliyuncs.com:3717/loveydie?replicaSet=mgset-4835041'
+        url:'mongodb://root:loveyedie@dds-bp1ddbe00dfdb9041.mongodb.rds.aliyuncs.com:3717,dds-bp1ddbe00dfdb9042.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4835041'
         //mongodb://root:****@dds-bp1ddbe00dfdb9041.mongodb.rds.aliyuncs.com:3717,dds-bp1ddbe00dfdb9042.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4835041
         //url: 'mongodb://127.0.0.1:27017/loveyedie'
     },
