@@ -1,0 +1,98 @@
+<div class="afly-index-top"></div>
+<div class="afly-index-body row afly-layout">
+    <main class="col-md-8 afly-main">
+        {{#each articles}}
+        <article class="afly-index-post">
+            <h4>
+                <a href="/p/{{_id}}" class="afly-link-post">{{title}}</a>
+            </h4>
+            <div class="row afly-post-body">
+                <div class="col-md-3"><img class="afly-post-pic" src="{{#if picurl}}{{picurl}}{{else}}{{_category.catpic}}{{/if}}" alt="pic"></div>
+                <div class="col-md-9">
+                    <p class="afly-post-content">{{articleDesc content}}</p>
+                    <a href="/p/{{_id}}" class="btn btn-black afly-link-more pull-right">阅读全文</a>
+                </div>
+            </div>
+            <footer class="afly-post-footer">
+                <span>{{formatDate updated_time 'yyyy-MM-dd' }}</span>
+                <span>作者：{{_user.usernick}}</span>
+                <span>个人博客：[<a href="/c/{{_category._id}}">{{_category.name}}</a>]</span>
+            </footer>
+        </article>
+        {{/each}}
+        {{#gt pageCount 1}}
+        <nav aria-label="Page navigation" class="afly-pager">
+            <ul class="pagination">
+                {{#gt page 1}}
+                <li>
+                    <a href="{{pageUrl}}{{reduce page 1}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {{/gt}}
+                {{#each pageArr}}
+                <li {{#if active}}class="active"{{/if}}><a href="{{#if active}}javascript:void(0);{{else}}{{pageItemUrl}}{{/if}}">{{pageNum}}</a></li>
+                {{/each}}
+                {{#gt pageCount page}}
+                <li>
+                    <a href="{{pageUrl}}{{add page 1}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {{/gt}}
+            </ul>
+        </nav>
+        {{/gt}}
+    </main>
+
+    <div class="col-md-4 afly-slidebar">
+        <div class="afly-wedget">
+            <h4 class="afly-wedget-title">关注我</h4>
+            <div class="afly-wedget-content">
+                <ul class="list-inline list-unstyled afly-wedget-me">
+                    <li><a class="tel" href="javascript:void(0);" title="保密">我的电话</a></li>
+                    <li><a class="email" href="mailto:admin@admin.com" target="_blank">我的邮箱</a></li>
+                    <li><a class="qq" href="javascript:void(0);" title="11360431">我的QQ</a></li>
+                    <li><a class="prize" href="https://github.com/loveyedie">github</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="afly-wedget">
+            <h4 class="afly-wedget-title">推荐图文</h4>
+            <div class="afly-wedget-content">
+                <ul class="list-unstyled afly-wedget-recomment">
+                    {{#each recommend}}
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href=""><img src="{{#if picurl}}{{picurl}}{{else}}{{_category.catpic}}{{/if}}" width="60" alt=""></a>
+                            </div>
+                            <div class="col-md-9">
+                                <p class="afly-hot-post"><a href="/p/{{_id}}">{{title}}</a></p>
+                                <p>
+                                    <span class="afly-label-cat"><a href="/c/{{_category._id}}">{{_category.name}}</a></span>
+                                    <span class="afly-label-date">{{formatDate updated_time 'yyyy-MM-dd' }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="afly-wedget">
+            <h4 class="afly-wedget-title">热门排行</h4>
+            <div class="afly-wedget-content">
+                <ul class="list-inline afly-wedget-toppost">
+                    {{#each hotArticle}}
+                    <li>
+                        [<a href="/c/{{_category._id}}">{{_category.name}}</a>]
+                        <a class="afly-link-toppost up" href="/p/{{_id}}" title="{{title}}">{{title}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="afly-index-bottom"></div>

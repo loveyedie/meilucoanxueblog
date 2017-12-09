@@ -1,0 +1,60 @@
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+        <li><a href="/admin/category"><i class="fa fa-file-text"></i> 分类管理</a></li>
+        <li class="active">添加分类</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" action="/admin/category/create" method="post">
+        <input type="hidden" name="id" value="{{category._id}}">
+        <div class="box box-primary " id="createCategory">
+            <div class="box-header with-border">
+                <h3 class="box-title">添加分类</h3></div>
+            <div class="box-body create">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="catName">分类名称</label>
+                            <input class="form-control" id="catName" name="name" placeholder="输入分类名称" type="text"
+                                   value="{{category.name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">分类代表图</label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    {{#if category}}
+                                    <img src="{{category.catpic}}" alt="" height="60">
+                                    {{else}}
+                                    <img src="/upload/category/cat-default.jpg" height="60" alt="">
+                                    {{/if}}
+                                </div>
+                                <div class="col-md-1">
+                                    {{#if category}}
+                                    <input type="hidden" name="catpic" value="{{category.catpic}}">
+                                    {{else}}
+                                    <input type="hidden" name="catpic" value="/upload/category/cat-default.jpg">
+                                    {{/if}}
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="file" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="order">排序</label>
+                            <input type="text" class="form-control" id="order" name="order" value="{{category.order}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-location-arrow"></i> 发布</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+            </div>
+        </div>
+    </form>
+</section>
+
+<script>
+
+</script>

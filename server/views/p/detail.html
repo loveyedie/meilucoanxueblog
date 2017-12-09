@@ -1,0 +1,49 @@
+<article class="afly-layout afly-single-page">
+    <div class="afly-page-header clearfix">
+        <nav class="pull-right">
+            <ol class="breadcrumb">
+                <span>你现在的位置：</span>
+                <li><a href="/">首页</a></li>
+                <li><a href="/c/{{article._category._id}}">{{article._category.name}}</a></li>
+                <li class="active">博文详情</li>
+            </ol>
+        </nav>
+        <h4>博文展示</h4>
+    </div>
+    <div class="afly-page-body">
+        <div class="afly-artile-title">
+            <h2 class="text-center">{{article.title}}</h2>
+            {{#ge article.views 100}}
+            <i class="fa fa-fire text-red" title="阅读量大于100会点亮小图标"></i>
+            {{/ge}}
+            <p class="description text-center">
+                <strong><a href="/u/{{article._user._id}}">{{article._user.usernick}}</a></strong>
+                <small>
+                    发表于 {{timeFromNow article.created_time}}
+
+                    |
+                    {{article.views}} 次浏览
+                    <!--|
+                    <a href="#comment"><span class="ds-thread-count" data-thread-key="{{article._id}}"
+                                             data-count-type="comments"></span></a> 次评论
+                    |
+                    <span class="text-success">最后编辑于 {{timeFromNow article.updated_time}}</span>-->
+                </small>
+                {{#equals article._user.username session.user.username}}
+                <small >
+                    <a href="/admin/p/edit/{{article._id}}">编辑</a>
+                </small>
+                {{/equals}}
+
+            </p>
+        </div>
+
+        <div class="afly-artile-content">
+            {{article.content}}
+        </div>
+
+    </div>
+</article>
+<div id="back-top">
+    <a href="#top"><span></span></a>
+</div>

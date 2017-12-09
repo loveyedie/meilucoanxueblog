@@ -1,0 +1,55 @@
+<div class="afly-login-box">
+    <div class="afly-login-logo">
+        <a href="/">{{site.title}}</a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg text-center">账户登录</p>
+        <form action="/login" method="post" id="js-afly-login">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="username" placeholder="用户名"   required
+                       data-bv-required="true"
+                       data-bv-required-message="不能为空！"
+                       data-bv-minlength="6"
+                       data-bv-minlength-message="用户名不能小于6位！"
+                       data-bv-maxlength="12"
+                       data-bv-maxlength-message="用户名不能多于12位！"
+                >
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <p class="afly-form-err"></p>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" name="password" placeholder="密码" required
+                       data-bv-required="true"
+                       data-bv-required-message="不能为空！"
+                       data-bv-minlength="6"
+                       data-bv-minlength-message="用户名不能小于6位！"
+                >
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <p class="afly-form-err"></p>
+            </div>
+            <div class="form-group has-feedback">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="code" placeholder="验证码"
+                               data-bv-required="true"
+                               data-bv-required-message="请输入验证码！"
+                               data-bv-isajax="code"
+                               data-bv-isajax-message="请输入正确的验证码"
+                        >
+                    </div>
+                    <div class="col-md-6">
+                        <img src="/api/code?v={{nowtime}}" width="80" alt="" class="js-afly-code">
+                    </div>
+                </div>
+                <p class="afly-form-err"></p>
+            </div>
+            <button type="submit" class="btn btn-black btn-block btn-flat">登 录</button>
+        </form>
+
+        <div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <!--<a href="/join" class="btn btn-block btn-github">注册</a>-->
+            <a href="/join" class="btn btn-block btn-github" id="registerBtn">注册</a>
+        </div>
+    </div>
+</div>

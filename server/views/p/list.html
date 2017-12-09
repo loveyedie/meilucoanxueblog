@@ -1,0 +1,78 @@
+<section class="afly-layout afly-single-page">
+    <div class="afly-page-header clearfix">
+        <nav class="pull-right">
+            <ol class="breadcrumb">
+                <span>你现在的位置：</span>
+                <li><a href="/">网站首页</a></li>
+                <li class="active">{{cat.name}}</li>
+            </ol>
+        </nav>
+        <h4>{{cat.name}}</h4>
+    </div>
+    <div class="afly-page-body">
+        {{#if count}}
+        {{#each articles}}
+        <post class="row afly-post-item">
+            <div class="col-md-8">
+                <div class="row afly-post-info">
+                    <div class="col-md-2 afly-post-num">
+                        {{#lt @index 10}}
+                        0{{addOne @index}}
+                        {{else}}
+                        {{addOne @index}}
+                        {{/lt}}
+                    </div>
+                    <div class="col-md-10">
+                        <h2 class="afly-post-title">
+                            {{#if ../keyword}}<span>[<a href="/c/{{_category._id}}">{{_category.name}}</a>]</span>{{/if}}
+                            {{#equals type '原创'}}
+                            <span >[原创]</span>
+                            {{/equals}}
+                            {{#equals type '分享'}}
+                            <span >[分享]</span>
+                            {{/equals}}
+                            <a href="/p/{{_id}}" class="">{{title}}</a>
+                        </h2>
+                        <p class="afly-post-desc">
+                            {{articleDesc content}}
+                            <!--个人博客模板古典系列之——江南墨卷个人博客模板古典系列之——江南墨卷广安领先....-->
+                        </p>
+                        <p class="afly-post-date text-right">{{formatDate updated_time 'yyyy-MM-dd' }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 afly-post-img-box text-center">
+                <a href=""><img src="{{#if picurl}}{{picurl}}{{else}}{{_category.catpic}}{{/if}}" alt=""></a>
+            </div>
+        </post>
+        {{/each}}
+        {{else}}
+        <div class="text-center" style="line-height: 100px;">
+            大爷，不好意思啊，没有找到你需要的数据！
+        </div>
+        {{/if}}
+        {{#gt pageCount 1}}
+        <nav aria-label="Page navigation" class="afly-pager">
+            <ul class="pagination">
+                {{#gt page 1}}
+                <li>
+                    <a href="{{pageUrl}}?page={{reduce page 1}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {{/gt}}
+                {{#each pageArr}}
+                <li {{#if active}}class="active"{{/if}}><a href="{{#if active}}javascript:void(0);{{else}}{{pageItemUrl}}{{/if}}">{{pageNum}}</a></li>
+                {{/each}}
+                {{#gt pageCount page}}
+                <li>
+                    <a href="{{pageUrl}}?page={{add page 1}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {{/gt}}
+            </ul>
+        </nav>
+        {{/gt}}
+    </div>
+</section>

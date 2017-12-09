@@ -1,0 +1,132 @@
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+        <li class="active">修改当前用户信息</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/admin/u/create" class="form-horizontal" method="post">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">修改个人信息</h3>
+                    </div>
+                    <div class="box-body">
+                        <input class="form-control"  value="{{user._id}}" name="id"  type="hidden">
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label">用户名</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="username" value="{{user.username}}" name="username" placeholder="用户名" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="usernick" class="col-sm-2 control-label">昵称</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="usernick" value="{{user.usernick}}" name="usernick" placeholder="昵称" type="text" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword" class="col-sm-2 control-label">重置密码</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="newPassword" value="" name="newPassword" placeholder="新密码" type="password" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="role" class="col-sm-2 control-label">角色等级</label>
+
+                            <div class="col-sm-7">
+                                <select name="role" id="role" class="form-control">
+                                    <option value="user" {{#equals user.role 'user'}}selected {{/equals}}>user</option>
+                                    <option value="admin" {{#equals user.role 'admin'}}selected {{/equals}}>admin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sex" class="col-sm-2 control-label">性别</label>
+                            <div class="col-sm-7">
+                                <select name="sex" id="sex" class="form-control">
+                                    <option value="保密" {{#equals user.sex '保密'}}selected {{/equals}}>保密</option>
+                                    <option value="男" {{#equals user.sex '男'}}selected {{/equals}}>男</option>
+                                    <option value="女" {{#equals user.sex '女'}}selected {{/equals}}>女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age" class="col-sm-2 control-label">年龄</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="age" value="{{user.age}}" name="age" placeholder="18" type="number" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile" class="col-sm-2 control-label">手机</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="mobile" value="{{user.mobile}}" placeholder="手机号" type="text" name="mobile">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">邮箱</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="email" value="{{user.email}}" placeholder="邮箱" type="email" name="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website" class="col-sm-2 control-label">个人站点</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="website" value="{{user.website}}" name="website" placeholder="个人站点" type="text" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">所在地点</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="address" value="{{user.address}}" name="address"  placeholder="所在地点" type="text" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">职业</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="address" value="{{user.job}}" name="job"  placeholder="职业" type="text" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="github" class="col-sm-2 control-label">Github</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="github" value="{{user.github}}" name="github" placeholder="Github" type="text" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="github" class="col-sm-2 control-label">微博地址</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="github" value="{{user.weibo}}" name="weibo" placeholder="微博" type="text" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signature" class="col-sm-2 control-label">个人签名</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="signature" value="{{user.signature}}" name="signature" placeholder="个人签名" type="text" >
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-7">
+                                <button type="submit" class="btn btn-primary">保存信息</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

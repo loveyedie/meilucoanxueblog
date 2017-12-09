@@ -1,0 +1,35 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="{{session.user.userpic}}" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{{session.user.username}}</p>
+                <!-- Status -->
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+            <li class="header">管理中心</li>
+            <!-- Optionally, you can add icons to the links -->
+            {{# equals session.user.role 'admin'}}
+            <li {{#if menu}}{{#equals menu 'index'}}class="active"{{/equals}}{{/if}}><a href="/admin"><i class="fa fa-dashboard"></i> <span>概览</span></a></li>
+            <li {{#if menu}}{{#equals menu 'cat-list'}}class="active"{{/equals}}{{/if}}><a href="/admin/category"><i class="fa fa-dashboard"></i> <span>分类管理</span></a></li>
+            {{/equals}}
+            <li {{#if menu}}{{#equals menu 'p-list'}}class="active"{{/equals}}{{/if}}><a href="/admin/p"><i class="fa fa-file-text"></i> <span>文章管理</span></a></li>
+            <li {{#if menu}}{{#equals menu 'u-info'}}class="active"{{/equals}}{{/if}}><a href="/admin/me"><i class="fa fa-info"></i> <span>修改信息</span></a></li>
+
+            {{#equals session.user.role 'admin'}}
+            <li {{#if menu}}{{#equals menu 'admin-user'}}class="active"{{/equals}}{{/if}}><a href="/admin/u"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
+            {{/equals}}
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>

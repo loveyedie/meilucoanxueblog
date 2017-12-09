@@ -1,0 +1,60 @@
+<section class="content-header">
+    <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+        <li><a href="/admin/p"><i class="fa fa-file-text"></i> 文章管理</a></li>
+        <li class="active">写文章</li>
+    </ol>
+</section>
+<section class="content">
+    <form role="form" action="/admin/p/create" method="post">
+        <input type="hidden" name="id" value="{{article._id}}">
+        <div class="box box-primary " id="createP">
+            <div class="box-header with-border">
+                <h3 class="box-title">发表文章</h3>
+                <a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank">Markdown语法参考</a>
+                <a href="#" data-toggle="fullscreen" data-target="#createP"><i class="fa fa-arrows-alt pull-right"></i></a>
+            </div>
+            <div class="box-body create">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select class="form-control" name="type" id="">
+                                        <option value="原创" {{#equals article.type '原创'}}selected{{/equals}}>原创</option>
+                                        <option value="分享" {{#equals article.type '分享'}}selected{{/equals}}>分享</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <input class="form-control" id="title" name="title" placeholder="输入标题" type="text"
+                                           value="{{article.title}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">文章分类</label>
+                            <select class="form-control" name="category" id="category">
+                                {{#each cats}}
+                                <option value="{{_id}}"  {{selected}}>{{name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tags">文章标签</label>
+                            <input type="text" class="form-control" name="articleTags" value="{{article.tags}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">文章内容</label>
+                            <textarea class="form-control " id="content" name="content">{{article.content}}</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-location-arrow"></i> 发布</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+            </div>
+        </div>
+    </form>
+</section>

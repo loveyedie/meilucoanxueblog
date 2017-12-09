@@ -1,0 +1,113 @@
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/lib/myValidate/myValidate.js"></script>
+<!--<script src="/lib/jquery-cascade-1.0/jquery-cascade-1.0.js"></script>-->
+<script src="/lib/toastr/toastr.js"></script>
+
+<script>
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
+    //头部搜索
+    $(function() {
+        $("#search-form").on("click", ".js-search", function(){
+            var keyword = $("#search").val();
+            if(!keyword){
+                alert("请填写要搜索的关键字");
+                return false;
+            }
+        })
+    });
+
+    //用户修改提交
+    $("#js-user-edit").length && $("#js-user-edit").myValidator();
+
+    $(".js-afly-upload").length && uploadUserPic();
+
+    //详情页底部快速向上
+    if($("#back-top").length){
+        $("#back-top").hide();
+
+        $(function () { // fade in #back-top
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
+            $('#back-top a').click(function () {// scroll body to 0px on click
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+    }
+
+
+
+    function uploadUserPic() {
+        var canClick = true;
+        $(".js-afly-upload").bind("click", function (e) {
+            if(!canClick) return;
+            canClick = false;
+            var file = $(".afly-hidden-file")[0].files[0];
+            if(!file) return;
+            var formdata = new FormData();
+            formdata.append('avatar', file);
+            console.dir(formdata.get("avatar"));
+            $.ajax({
+                url: '/uploadfile/userpic?v=' + new Date().getTime(),
+                type: 'post',
+                data: formdata,
+                dataType: 'JSON',
+                //async:false,
+                //cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if(data.status){
+                        $(".js-user-pic").attr("src", data.result.picUrl).data("picId", data.result.picId);
+                        $(".js-afly-userpic").val(data.result.picUrl);
+                    }else{
+                        alert(data.message);
+                    }
+                    $(".afly-hidden-file").val('');
+                    canClick = true;
+                    console.log("upload success!");
+                },
+                error: function (err) {
+                    console.log(err);
+                    alert("大爷，不好意思，服务器出错了!"+err);
+                    canClick = true;
+                }
+            });
+        })
+    }
+
+    {{#if error}}
+    toastr.error('{{error}}');
+    {{/if}}
+    {{#if success}}
+    toastr.success('{{success}}');
+    {{/if}}
+</script>

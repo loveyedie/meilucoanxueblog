@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    {{> head}}
+</head>
+<body>
+<div class="afly-wrapper">
+    <header class="afly-header">
+        <div class="afly-header-top"></div>
+    </header>
+    <div class="afly-single-wrapper afly-layout">
+        {{{body}}}
+    </div>
+    {{>footer}}
+</div>
+{{>js}}
+<script type="application/javascript">
+    $("#js-afly-register").length && $("#js-afly-register").myValidator();
+    $("#js-afly-login").length && $("#js-afly-login").myValidator();
+    $(".js-afly-code").length && $(".js-afly-code").bind("click",function () {
+        $(this).attr("src","/api/code?v="+ new Date().getTime());
+    })
+</script>
+</body>
+</html>
