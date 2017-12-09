@@ -65,7 +65,8 @@ var app = express();
 mongoose.connection.on("connected", function () {
     console.log("MongoDB connected success.")
 });
-mongoose.connection.on("error", function () {
+mongoose.connection.on("error", function (err) {
+    console.log(err);
     console.log("MongoDB connected fail.")
 });
 mongoose.connection.on("disconnected", function () {
