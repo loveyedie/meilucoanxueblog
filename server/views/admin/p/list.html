@@ -67,6 +67,29 @@
                         </tr>
                         {{/each}}
                     </table>
+                    {{#gt pageCount 1}}
+                    <nav aria-label="Page navigation" class="afly-pager">
+                        <ul class="pagination">
+                            {{#gt page 1}}
+                            <li>
+                                <a href="{{pageUrl}}&page={{reduce page 1}}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            {{/gt}}
+                            {{#each pageArr}}
+                            <li {{#if active}}class="active"{{/if}}><a href="{{#if active}}javascript:void(0);{{else}}{{pageItemUrl}}{{/if}}">{{pageNum}}</a></li>
+                            {{/each}}
+                            {{#gt pageCount page}}
+                            <li>
+                                <a href="{{pageUrl}}&page={{add page 1}}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            {{/gt}}
+                        </ul>
+                    </nav>
+                    {{/gt}}
                 </div>
             </div>
         </div>

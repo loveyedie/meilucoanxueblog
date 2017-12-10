@@ -26,7 +26,7 @@ var Config = {
         }
     },
     article:{
-        pageSize:2,
+        pageSize:10,
         type:['原创','分享']
     }
 };

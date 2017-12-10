@@ -28,6 +28,8 @@ router.get('/',function (req,res) {
     var pageSize = config.article.pageSize;
     var queryParams = {};              //_user: req.session.user._id
     if(catId) queryParams._category = catId;
+    console.log('--------',queryParams);
+    console.log(page);
     async.parallel({
         cats: function (done) {
             Category.find({status: true}).exec(function (err,doc) {
@@ -41,11 +43,24 @@ router.get('/',function (req,res) {
         }
     },function (err, result) {
         var articles = result.pageInfo.results;
+        var count = result.pageInfo.count;
+        var pageUrl = '/admin/p?catId='+catId;
+        var pageArr = [];
+        for(var i = 1; i <= result.pageInfo.pageCount; i++){
+            pageArr.push({pageNum: i,active: i == page ? 1 : 0, pageItemUrl: pageUrl + '&page=' + i});
+        }
         res.render('admin/p/list',{
             articles:articles,
             currentCat:catId,
             cats:result.cats,
             pageInfo:result.pageInfo,
+
+            pageArr:pageArr,
+            page:page,
+            pageUrl:pageUrl,
+            pageCount:result.pageInfo.pageCount,
+            count:count,
+
             menu:'p-list',
             layout:'manage'
         });

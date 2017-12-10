@@ -20,25 +20,20 @@
                                    value="{{category.name}}">
                         </div>
                         <div class="form-group">
-                            <label for="category">分类代表图</label>
                             <div class="row">
-                                <div class="col-md-4">
-                                    {{#if category}}
-                                    <img src="{{category.catpic}}" alt="" height="60">
-                                    {{else}}
-                                    <img src="/upload/category/cat-default.jpg" height="60" alt="">
-                                    {{/if}}
+                                <label for="age" class="col-sm-2 control-label">分类代表图</label>
+                                <div class="col-sm-4">
+                                    <input class="form-control js-afly-userpic"  value="{{#if category}}{{category.catpic}}{{else}}/upload/category/cat-default.jpg{{/if}}" name="catpic"  type="hidden" >
+                                    <div class="afly-upload-pic" title="点击重新上传"  style="position: relative;">
+                                        {{#if category}}
+                                        <img src="{{category.catpic}}" alt="" height="60" class="js-user-pic">
+                                        {{else}}
+                                        <img src="/upload/category/cat-default.jpg" height="60" alt="" class="js-user-pic">
+                                        {{/if}}
+                                        <input class="afly-hidden-file"  value="" name="uploadpic"  type="file" style="opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                    </div>
                                 </div>
-                                <div class="col-md-1">
-                                    {{#if category}}
-                                    <input type="hidden" name="catpic" value="{{category.catpic}}">
-                                    {{else}}
-                                    <input type="hidden" name="catpic" value="/upload/category/cat-default.jpg">
-                                    {{/if}}
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="file" class="form-control">
-                                </div>
+                                <div class="col-sm-3"><button class="btn btn-default btn-sm js-afly-upload" data-upload="category" type="button">上传</button></div>
                             </div>
                         </div>
                         <div class="form-group">
