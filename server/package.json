@@ -4,7 +4,7 @@
   "description": "梅落残雪博客服务端",
   "main": "bin/www",
   "scripts": {
-    "test": "node bin/www"
+    "dev": "node bin/www"
   },
   "keywords": [
     "meiluocanxue"

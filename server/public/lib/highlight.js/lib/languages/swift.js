@@ -13,7 +13,7 @@ module.exports = function(hljs) {
         'bridgeFromObjectiveC bridgeFromObjectiveCUnconditional bridgeToObjectiveC ' +
         'bridgeToObjectiveCUnconditional c contains count countElements countLeadingZeros ' +
         'debugPrint debugPrintln distance dropFirst dropLast dump encodeBitsAsWords ' +
-        'enumerate equal fatalError filter find getBridgedObjectiveCType getVaList ' +
+        'enumerate equal fatalError filters find getBridgedObjectiveCType getVaList ' +
         'indices insertionSort isBridgedToObjectiveC isBridgedVerbatimToObjectiveC ' +
         'isUniquelyReferenced isUniquelyReferencedNonObjC join lazy lexicographicalCompare ' +
         'map max maxElement min minElement numericCast overlaps partition posix ' +

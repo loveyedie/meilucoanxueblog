@@ -1,0 +1,403 @@
+/**
+*author:fly
+*date:2017-12-5
+*/
+body{
+  margin: 0;
+  font-size: 14px;
+  background: url(../img/bg.jpg) repeat;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+a:hover{
+    color: #333;
+}
+
+.afly-layout {
+    width: 1000px;
+    margin: auto;
+}
+.afly-wrapper {
+    min-height: 600px;
+    background: url(../img/footside.jpg) bottom center no-repeat;
+    overflow: hidden;
+}
+.afly-header {
+    padding: 0;
+    height: auto!important;
+    width: 100%;
+    background: url(../img/yuanshan.jpg) right bottom no-repeat
+}
+.afly-header-top {
+    background: url(../img/topbg.jpg) repeat-x;
+    height: 28px;
+}
+
+.afly-logo-box{position: relative; padding: 50px 20px 20px;}
+
+/*search*/
+.afly-search{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+.btn-black,
+.btn-black:focus{
+    color: #fff;
+    background-color: #000;
+}
+.btn-black:hover{
+    color: #fff;
+    background: rgba(0,0,0,.6);
+}
+
+/*导航用户信息*/
+.afly-user-btn .afly-user-image{width: 18px;}
+.afly-user-drop{ width: 180px;}
+.afly-user-drop .user-header{
+    text-align: center;
+    padding: 10px;
+}
+.afly-user-drop .user-header img{ width: 90px;}
+.afly-user-drop .user-body{
+    padding: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    border-top: 1px solid #dddddd;
+}
+
+.afly-user-drop .user-footer{padding: 10px;}
+
+/*nav*/
+.navbar-afly{
+    height: 64px;
+    padding-top: 6px;
+    background: url(../img/navbg.png) no-repeat;
+}
+
+.navbar-afly .nav>li>.afly-nav-link:hover{
+    color: #fff;
+    background: transparent!important;
+}
+.navbar-afly .nav>li>.afly-nav-link:focus{
+    color: #fff;
+    background: transparent!important;
+}
+.navbar-afly .nav>li>.afly-nav-link:active{
+    color: #fff;
+    background: transparent!important;
+}
+.navbar-afly .nav .open>.afly-nav-link,
+.navbar-afly .nav .open .afly-nav-link,
+.navbar-afly .nav{
+    color: #fff;
+    background: transparent;
+}
+.navbar-afly .open .afly-nav-link{
+    color: #fff;
+    background: transparent;
+    border: none;
+}
+.afly-nav-link{color: #fff;}
+.afly-nav-link:hover,
+.afly-nav-link:focus{
+    color: #fff;
+    text-decoration: none;
+}
+
+/*footer*/
+.afly-footer {
+    background: url(../img/footerbg.png) repeat-x;
+    padding: 20px 0;
+    color: #ccc;
+    margin-top: 20px;
+}
+.afly-footer a{ color: #fff;}
+
+    /*index*/
+.afly-index-top{
+    background: url(../img/maintopbg.jpg) top center no-repeat;
+    width: 1034px;
+    margin: 0 auto;
+    height: 14px;
+}
+.afly-index-body{
+    background: #e5e5e5;
+    overflow: hidden;
+    width: 1000px;
+    min-height: 600px;
+    margin: auto;
+    border-left: #d2d2d2 1px solid;
+    border-right: #d2d2d2 1px solid;
+}
+.afly-index-bottom{background: url(../img/mainendbg.jpg) no-repeat;
+    width: 1034px;
+    margin: auto;
+    height: 14px;
+}
+
+.afly-main{}
+.afly-index-post{
+    margin: 15px 0;
+}
+.afly-link-post{color: #333; font-size: 16px;}
+.afly-link-post:hover{color: #333;}
+.afly-post-pic{
+    width: 140px;
+    border: 1px solid #f4f2f2;
+}
+.afly-post-footer{
+    margin: 10px 0;
+    padding-left: 14px;
+    height: 26px;
+    line-height: 26px;
+    color:#838383;
+    background: #f6f6f6 url(../img/time.jpg) 5px center no-repeat;
+}
+.afly-post-footer span{
+    margin: 0 10px;
+}
+afly-post-footer span a{
+    color: #41607d;
+}
+.afly-wedget{}
+.afly-wedget a{
+    color: #333;
+}
+.afly-wedget .up{color: #600;}
+.afly-wedget-title{
+    padding-left: 40px;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+    font-size: 18px;
+    background: url(../img/rtitbg.png) no-repeat;
+}
+.afly-wedget-content{}
+.afly-wedget-me a{
+    display: inline-block;
+    color: #747F8C;
+    width: 62px;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 14px;
+}
+
+.afly-wedget-me .email {
+    background: url(../img/gz02.png) no-repeat;
+}
+.afly-wedget-me .qq {
+    background: url(../img/gz03.png) no-repeat;
+}
+.afly-wedget-me .tel {
+    background: url(../img/gz01.png) no-repeat;
+}
+.afly-wedget-me .prize {
+    background: url(../img/gz04.png) no-repeat;
+}
+.afly-wedget-me a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+.afly-wedget-recomment{
+    margin-left: 10px;
+}
+.afly-wedget-recomment .afly-label-cat{
+    padding-left: 17px;
+    background: url(../img/lanmbq.png) no-repeat center left;
+}
+.afly-wedget-recomment .afly-label-date{
+    background: url(../img/datepng.png) no-repeat left center;
+    padding-left: 15px;
+    margin-left: 10px;
+}
+.afly-label-cat a{
+    color: #999;
+}
+.afly-label-cat a:hover{
+    color: #066;
+}
+
+.afly-wedget-toppost{
+    margin-left: 10px;
+}
+.afly-wedget-toppost li{
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    padding-left: 15px;
+    background: url(../img/libg.jpg) no-repeat left center;
+}
+.afly-link-toppost{
+    padding-left: 10px;
+}
+
+.afly-adv {}
+
+.afly-pager{
+    text-align: center;
+}
+.afly-pager .pagination>li>a,
+.afly-pager .pagination>li>span{
+    color: #333;
+}
+.afly-pager .pagination>.active>a,
+.afly-pager .pagination>li>a:hover{
+    background-color: #111;
+    border-color: #111;
+    color: #fff;
+}
+    /*login*/
+.afly-single-wrapper{}
+.afly-login-box{
+    width: 400px;
+    margin: 0 auto 100px;
+    padding-top: 80px;
+}
+.afly-login-logo{
+    font-size: 24px;
+    margin: 20px auto 60px;
+    text-align: center;
+}
+.afly-login-box .form-group{height: 48px;}
+.afly-login-box .afly-form-err{ margin-top: 5px; padding-left: 12px;}
+/*page*/
+.afly-single-page{
+    border: 1px solid #ccc;
+}
+.afly-page-header{
+    margin: 20px 20px 0;
+    border-bottom: #333 2px solid;
+    color: #171717;
+}
+.afly-page-header .breadcrumb{
+    background: transparent;
+    margin-bottom: 0;
+}
+.afly-artile-title{
+    margin-bottom: 20px;
+}
+.afly-page-body{
+    margin: 20px;
+    min-height: 500px;
+}
+.afly-page-body .afly-p{
+    text-indent: 2em;
+    line-height: 30px;
+}
+.afly-page-body img{
+    max-width: 100%;
+}
+
+.afly-post-item{
+    margin-bottom: 30px;
+    height: 140px;
+}
+.afly-post-info{
+    width: 90%; margin: 0 auto;
+    border-bottom: #838484 1px solid;
+}
+.afly-post-num{
+    text-align: left;
+    line-height: 140px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #aeaeae;
+}
+.afly-post-title{
+    font-size: 18px;
+    padding: 5px 10px;
+    background: #ccc;
+    margin-bottom: 10px
+}
+.afly-post-title a{
+    color: #333;
+}
+.afly-post-title a:hover{
+    color: #333;
+    text-decoration: none;
+}
+.afly-post-img-box{
+    background: #ccc;
+    height: 140px;
+    overflow: hidden;
+}
+.afly-post-img-box img{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    height: 140px;
+    margin: auto
+}
+.afly-post-img-box img:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+
+/*用户信息*/
+.afly-user-info .afly-form-err{padding: 0; line-height: 34px;}
+.afly-upload-pic{
+    position: relative;
+    width: 100px;
+    max-height: 100px;
+}
+.afly-upload-pic img{
+    border:1px solid #ddd;
+    border-radius: 4px;
+}
+.afly-upload-pic .afly-hidden-file{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/*other*/
+
+/* 图片展示 */
+.lispic {
+    padding: 20px 0;
+    overflow: hidden;
+}
+.lispic li {
+    float: left;
+    text-align: center;
+    width: 200px;
+    border: #ccc 5px solid;
+    overflow: hidden;
+    background: #ccc;
+    margin: 10px 10px 10px 9px;
+    position: relative
+}
+.lispic li img {
+    display: block;
+    margin: auto;
+    height: 160px;
+    width: auto;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.lispic li span {
+    padding: 10px 0;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    color: #fff;
+}
+.lispic li img:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}

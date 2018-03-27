@@ -36,7 +36,7 @@ module.exports = function(hljs) {
               name:
                 'comment endcomment load templatetag ifchanged endifchanged if endif firstof for ' +
                 'endfor ifnotequal endifnotequal widthratio extends include spaceless ' +
-                'endspaceless regroup ifequal endifequal ssi now with cycle url filter ' +
+                'endspaceless regroup ifequal endifequal ssi now with cycle url filters ' +
                 'endfilter debug block endblock else autoescape endautoescape csrf_token empty elif ' +
                 'endwith static trans blocktrans endblocktrans get_static_prefix get_media_prefix ' +
                 'plural get_current_language language get_available_languages ' +

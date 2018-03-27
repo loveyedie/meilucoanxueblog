@@ -77,7 +77,7 @@ module.exports = function(hljs) {
         'variance version waitDepth weekdayNames wordOffset xsltApplyStylesheet xsltApplyStylesheetFromFile xsltLoadStylesheet ' +
         'xsltLoadStylesheetFromFile add breakpoint cancel clear local variable file word line folder directory URL close socket process ' +
         'combine constant convert create new alias folder directory decrypt delete variable word line folder ' +
-        'directory URL dispatch divide do encrypt filter get include intersect kill libURLDownloadToFile ' +
+        'directory URL dispatch divide do encrypt filters get include intersect kill libURLDownloadToFile ' +
         'libURLFollowHttpRedirects libURLftpUpload libURLftpUploadFile libURLresetAll libUrlSetAuthCallback ' +
         'libURLSetCustomHTTPHeaders libUrlSetExpect100 libURLSetFTPListCommand libURLSetFTPMode libURLSetFTPStopTime ' +
         'libURLSetStatusCallback load multiply socket prepare process post seek rel relative read from process rename ' +

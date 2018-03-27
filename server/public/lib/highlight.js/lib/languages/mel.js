@@ -59,7 +59,7 @@ module.exports = function(hljs) {
       'exactWorldBoundingBox exclusiveLightCheckBox exec executeForEachObject exists exp ' +
       'expression expressionEditorListen extendCurve extendSurface extrude fcheck fclose feof ' +
       'fflush fgetline fgetword file fileBrowserDialog fileDialog fileExtension fileInfo ' +
-      'filetest filletCurve filter filterCurve filterExpand filterStudioImport ' +
+      'filetest filletCurve filters filterCurve filterExpand filterStudioImport ' +
       'findAllIntersections findAnimCurves findKeyframe findMenuItem findRelatedSkinCluster ' +
       'finder firstParentOf fitBspline flexor floatEq floatField floatFieldGrp floatScrollBar ' +
       'floatSlider floatSlider2 floatSliderButtonGrp floatSliderGrp floor flow fluidCacheInfo ' +

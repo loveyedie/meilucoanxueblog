@@ -28,7 +28,7 @@ module.exports = function(hljs) {
     ]
   };
 
-  var TAGS = 'autoescape block do embed extends filter flush for ' +
+  var TAGS = 'autoescape block do embed extends filters flush for ' +
     'if import include macro sandbox set spaceless use verbatim';
 
   TAGS = TAGS + ' ' + TAGS.split(' ').map(function(t){return 'end' + t}).join(' ');

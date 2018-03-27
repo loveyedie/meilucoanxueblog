@@ -12,7 +12,7 @@ module.exports = function(hljs) {
         'lcase month vartype instrrev ubound setlocale getobject rgb getref string ' +
         'weekdayname rnd dateadd monthname now day minute isarray cbool round formatcurrency ' +
         'conversions csng timevalue second year space abs clng timeserial fixs len asc ' +
-        'isempty maths dateserial atn timer isobject filter weekday datevalue ccur isdate ' +
+        'isempty maths dateserial atn timer isobject filters weekday datevalue ccur isdate ' +
         'instr datediff formatdatetime replace isnull right sgn array snumeric log cdbl hex ' +
         'chr lbound msgbox ucase getlocale cos cdate cbyte rtrim join hour oct typename trim ' +
         'strcomp int createobject loadpicture tan formatnumber mid scriptenginebuildversion ' +

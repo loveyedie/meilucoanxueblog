@@ -1166,7 +1166,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		return !document.getElementsByName || !document.getElementsByName( expando ).length;
 	});
 
-	// ID filter and find
+	// ID filters and find
 	if ( support.getById ) {
 		Expr.filter["ID"] = function( id ) {
 			var attrId = id.replace( runescape, funescape );
@@ -1701,7 +1701,7 @@ Expr = Sizzle.selectors = {
 					Sizzle.error( match[0] );
 				}
 
-				// numeric x and y parameters for Expr.filter.CHILD
+				// numeric x and y parameters for Expr.filters.CHILD
 				// remember that false/true cast respectively to 0/1
 				match[4] = +( match[4] ? match[5] + (match[6] || 1) : 2 * ( match[3] === "even" || match[3] === "odd" ) );
 				match[5] = +( ( match[7] + match[8] ) || match[3] === "odd" );
@@ -1738,7 +1738,7 @@ Expr = Sizzle.selectors = {
 				match[2] = unquoted.slice( 0, excess );
 			}
 
-			// Return only captures needed by the pseudo filter method (type and argument)
+			// Return only captures needed by the pseudo filters method (type and argument)
 			return match.slice( 0, 3 );
 		}
 	},
@@ -1927,7 +1927,7 @@ Expr = Sizzle.selectors = {
 					Sizzle.error( "unsupported pseudo: " + pseudo );
 
 			// The user may use createPseudo to indicate that
-			// arguments are needed to create the filter function
+			// arguments are needed to create the filters function
 			// just as Sizzle does
 			if ( fn[ expando ] ) {
 				return fn( argument );
@@ -2850,7 +2850,7 @@ var rsingleTag = ( /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|
 
 var risSimple = /^.[^:#\[\.,]*$/;
 
-// Implement the identical functionality for filter and not
+// Implement the identical functionality for filters and not
 function winnow( elements, qualifier, not ) {
 	if ( jQuery.isFunction( qualifier ) ) {
 		return jQuery.grep( elements, function( elem, i ) {
@@ -4493,7 +4493,7 @@ var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
 
 var isHiddenWithinTree = function( elem, el ) {
 
-		// isHiddenWithinTree might be called from jQuery#filter function;
+		// isHiddenWithinTree might be called from jQuery#filters function;
 		// in that case, element will be second argument
 		elem = el || elem;
 
@@ -6175,7 +6175,7 @@ function curCSS( elem, name, computed ) {
 	computed = computed || getStyles( elem );
 
 	// getPropertyValue is needed for:
-	//   .css('filter') (IE 9 only, #12537)
+	//   .css('filters') (IE 9 only, #12537)
 	//   .css('--customProperty) (#3144)
 	if ( computed ) {
 		ret = computed.getPropertyValue( name ) || computed[ name ];
@@ -7642,7 +7642,7 @@ jQuery.fn.extend( {
 	serializeArray: function() {
 		return this.map( function() {
 
-			// Can add propHook for "elements" to filter or add form elements
+			// Can add propHook for "elements" to filters or add form elements
 			var elements = jQuery.prop( this, "elements" );
 			return elements ? jQuery.makeArray( elements ) : this;
 		} )

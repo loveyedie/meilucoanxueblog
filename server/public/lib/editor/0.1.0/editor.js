@@ -2131,7 +2131,7 @@ var CodeMirror = (function() {
     display.inputDiv.style.position = "absolute";
     display.input.style.cssText = "position: fixed; width: 30px; height: 30px; top: " + (e.clientY - 5) +
       "px; left: " + (e.clientX - 5) + "px; z-index: 1000; background: white; outline: none;" +
-      "border-width: 0; outline: none; overflow: hidden; opacity: .05; -ms-opacity: .05; filter: alpha(opacity=5);";
+      "border-width: 0; outline: none; overflow: hidden; opacity: .05; -ms-opacity: .05; filters: alpha(opacity=5);";
     focusInput(cm);
     resetInput(cm, true);
     // Adds "Select all" to context menu in FF

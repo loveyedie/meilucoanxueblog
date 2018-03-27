@@ -128,16 +128,16 @@ app.use(passport.session());
 /**
  * 服务器跨域
  * */
-/*app.all('*', function (req, res, next) {
+app.all('*', function (req, res, next) {
     //CORS
-    res.header("Access-Control-Allow-Origin","http://localhost:3000");
+    res.header("Access-Control-Allow-Origin","http://localhost:8080");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Control-Type, Accept");
     res.header("Access-Control-Allow-Credentials", true);
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
     res.header("X-Powered-By", "3.2.1");
     res.header("Content-Type", "application/json;charset=utf-8");
     next();
-});*/
+});
 
 /**
  * 全局参数传递

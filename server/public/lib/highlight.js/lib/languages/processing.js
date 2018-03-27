@@ -31,7 +31,7 @@ module.exports = function(hljs) {
         'saveXML selectOutput popMatrix printMatrix pushMatrix resetMatrix rotate rotateX rotateY rotateZ scale ' +
         'shearX shearY translate ambientLight directionalLight lightFalloff lights lightSpecular noLights normal ' +
         'pointLight spotLight image imageMode loadImage noTint requestImage tint texture textureMode textureWrap ' +
-        'blend copy filter get loadPixels set updatePixels blendMode loadShader PShaderresetShader shader createFont ' +
+        'blend copy filters get loadPixels set updatePixels blendMode loadShader PShaderresetShader shader createFont ' +
         'loadFont text textFont textAlign textLeading textMode textSize textWidth textAscent textDescent abs ceil ' +
         'constrain dist exp floor lerp log mag map max min norm pow round sq sqrt acos asin atan atan2 cos degrees ' +
         'radians sin tan noise noiseDetail noiseSeed random randomGaussian randomSeed'

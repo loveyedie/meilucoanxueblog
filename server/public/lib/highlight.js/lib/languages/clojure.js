@@ -23,7 +23,7 @@ module.exports = function(hljs) {
       'flush read slurp read-line subvec with-open memfn time re-find re-groups rand-int rand mod locking '+
       'assert-valid-fdecl alias resolve ref deref refset swap! reset! set-validator! compare-and-set! alter-meta! '+
       'reset-meta! commute get-validator alter ref-set ref-history-count ref-min-history ref-max-history ensure sync io! '+
-      'new next conj set! to-array future future-call into-array aset gen-class reduce map filter find empty '+
+      'new next conj set! to-array future future-call into-array aset gen-class reduce map filters find empty '+
       'hash-map hash-set sorted-map sorted-map-by sorted-set sorted-set-by vec vector seq flatten reverse assoc dissoc list '+
       'disj get union difference intersection extend extend-type extend-protocol int nth delay count concat chunk chunk-buffer '+
       'chunk-append chunk-first chunk-rest max min dec unchecked-inc-int unchecked-inc unchecked-dec-inc unchecked-dec unchecked-negate '+
